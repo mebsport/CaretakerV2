@@ -14,6 +14,8 @@ public class GameMaster : MonoBehaviour
 
     public GameObject restartPanel;
 
+    public AdManager adManager;
+
     private void Start()
     {
 
@@ -22,14 +24,25 @@ public class GameMaster : MonoBehaviour
     {
         if(hasLost == false)
         {
-            scoreValue = Time.timeSinceLevelLoad.ToString("F0");
-            score.text = scoreValue;
+            //scoreValue = Time.timeSinceLevelLoad.ToString("F0");
+            //score.text = scoreValue;
         }
     }
     public void GameOver()
     {
-        hasLost = true;
-        restartPanel.SetActive(true);
+        float randomNumber = Random.Range(0, 100);
+        
+        if(randomNumber < 34)
+        {
+            adManager.DisplayInterstitialAD();
+            hasLost = true;
+            restartPanel.SetActive(true);
+        }
+        else
+        {
+            hasLost = true;
+            restartPanel.SetActive(true);
+        }
     }
     public void GoToGameMenu()
     {
