@@ -22,16 +22,21 @@ public class GameMaster : MonoBehaviour
     public DragAndDrop dragAndDrop5;
     public DragAndDrop dragAndDrop6;
 
+    private int finalScore;
+    private int milkQuantity;
+
     private void Start()
     {
 
     }
     private void Update()
     {
+        milkQuantity = PlayerPrefs.GetInt("MilkAmmount");
         if(hasLost == false)
         {
-            //scoreValue = Time.timeSinceLevelLoad.ToString("F0");
-            //score.text = scoreValue;
+            scoreValue = Time.timeSinceLevelLoad.ToString("F0");
+            score.text = scoreValue;
+            
         }
     }
     public void GameOver()
@@ -42,6 +47,9 @@ public class GameMaster : MonoBehaviour
         dragAndDrop4.GameOver();
         dragAndDrop5.GameOver();
         dragAndDrop6.GameOver();
+
+        int.TryParse(scoreValue, out finalScore);
+        PlayerPrefs.SetInt("MilkAmmount",milkQuantity + finalScore);
 
         float randomNumber = Random.Range(0, 100);
         
