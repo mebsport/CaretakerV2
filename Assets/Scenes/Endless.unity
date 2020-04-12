@@ -1378,6 +1378,12 @@ MonoBehaviour:
   score: {fileID: 1650028857}
   restartPanel: {fileID: 2143381528}
   adManager: {fileID: 1739437641}
+  dragAndDrop1: {fileID: 2122199323}
+  dragAndDrop2: {fileID: 95844754}
+  dragAndDrop3: {fileID: 843662284}
+  dragAndDrop4: {fileID: 49011846}
+  dragAndDrop5: {fileID: 379763169}
+  dragAndDrop6: {fileID: 1421511063}
 --- !u!1 &843662277
 GameObject:
   m_ObjectHideFlags: 0

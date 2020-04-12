@@ -15,6 +15,12 @@ public class GameMaster : MonoBehaviour
     public GameObject restartPanel;
 
     public AdManager adManager;
+    public DragAndDrop dragAndDrop1;
+    public DragAndDrop dragAndDrop2;
+    public DragAndDrop dragAndDrop3;
+    public DragAndDrop dragAndDrop4;
+    public DragAndDrop dragAndDrop5;
+    public DragAndDrop dragAndDrop6;
 
     private void Start()
     {
@@ -30,6 +36,13 @@ public class GameMaster : MonoBehaviour
     }
     public void GameOver()
     {
+        dragAndDrop1.GameOver();
+        dragAndDrop2.GameOver();
+        dragAndDrop3.GameOver();
+        dragAndDrop4.GameOver();
+        dragAndDrop5.GameOver();
+        dragAndDrop6.GameOver();
+
         float randomNumber = Random.Range(0, 100);
         
         if(randomNumber < 34)

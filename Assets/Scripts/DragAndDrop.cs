@@ -11,6 +11,8 @@ public class DragAndDrop : MonoBehaviour
 
     private GameMaster gm;
 
+    private bool gameOver = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class DragAndDrop : MonoBehaviour
                 Collider2D touchedCollider = Physics2D.OverlapPoint(touchPosition);
                 if (col == touchedCollider)
                 {
-                    SelectSound.Play();
+                    //SelectSound.Play();
                     moveAllowed = true;
                 }
             }
@@ -53,9 +55,17 @@ public class DragAndDrop : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Baby's")
+        if (gameOver == false)
         {
-            gm.GameOver();
+            if (collision.tag == "Baby's")
+            {
+                gm.GameOver();
+            }
         }
+    }
+
+    public void GameOver()
+    {
+        gameOver = true;
     }
 }
