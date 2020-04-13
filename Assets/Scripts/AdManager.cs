@@ -7,7 +7,7 @@ public class AdManager : MonoBehaviour
 {
 
     string GooglePlay_ID = "3330924";
-    bool TestMode = true;
+    bool TestMode = false;
 
     // Start is called before the first frame update
     void Start()
